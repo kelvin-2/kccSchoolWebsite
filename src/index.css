@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+>>>>>>> 043f1670e425fa0035a021e57c824f4351a4775e
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
