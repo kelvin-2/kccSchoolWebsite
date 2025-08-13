@@ -1,18 +1,7 @@
-import React, { useState } from 'react';
-import { Menu, X, Phone, Mail, MapPin, Calendar, Users, BookOpen, Trophy, Heart, ChevronRight, Star, Home, Bus } from 'lucide-react';
+import React from 'react';
+import { Phone, Mail, MapPin, Calendar, Users, BookOpen, Trophy, Heart, ChevronRight, Star, Home, Bus, Camera } from 'lucide-react';
 
 const HomePage = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navigationItems = [
-    { name: 'Home', href: '#home', active: true },
-    { name: 'About Us', href: '#about' },
-    { name: 'Academics', href: '#academics' },
-    { name: 'Admissions', href: '#admissions' },
-    { name: 'Activities', href: '#activities' },
-    { name: 'Contact', href: '#contact' }
-  ];
-
   const features = [
     {
       icon: <BookOpen className="w-8 h-8" />,
@@ -46,111 +35,45 @@ const HomePage = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Sarah Mthembu",
-      role: "Parent",
-      content: "KCC has provided my children with not just excellent education, but also strong moral foundation. The teachers truly care about each student's growth."
-    },
-    {
-      name: "David Nkomo",
-      role: "Alumni Parent",
-      content: "Both my children graduated from KCC and are now successful in their careers. The values they learned here shaped who they are today."
-    }
-  ];
+  const ImagePlaceholder = ({ width = "w-full", height = "h-64", label, className = "" }) => (
+    <div className={`${width} ${height} bg-gradient-to-br from-gray-200 to-gray-300 rounded-lg flex flex-col items-center justify-center text-gray-600 ${className}`}>
+      <Camera className="w-12 h-12 mb-2 text-gray-400" />
+      <p className="text-sm font-medium text-center px-4">{label}</p>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="bg-white shadow-lg fixed w-full top-0 z-50">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-red-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">KCC</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-red-700">Kingdom Christian College</h1>
-                <p className="text-sm text-gray-600">Academic Excellence • Grade R to 12</p>
-              </div>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navigationItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    item.active
-                      ? 'bg-red-700 text-white'
-                      : 'text-gray-700 hover:text-red-700 hover:bg-gray-50'
-                  }`}
-                >
-                  {item.name}
-                </a>
-              ))}
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
-                Apply Now
-              </button>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-700 hover:text-red-700"
-              >
-                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50">
-                {navigationItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className={`block px-3 py-2 rounded-md text-base font-medium ${
-                      item.active
-                        ? 'bg-red-700 text-white'
-                        : 'text-gray-700 hover:text-red-700 hover:bg-white'
-                    }`}
-                  >
-                    {item.name}
-                  </a>
-                ))}
-                <button className="w-full mt-4 bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
-                  Apply Now
+      {/* Hero Section - Added top padding to account for fixed navbar */}
+      <section id="home" className="pt-32 bg-gradient-to-br from-red-50 via-white to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Hero Content */}
+            <div className="text-center lg:text-left">
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                Welcome to 
+                <span className="text-red-700"> Kingdom Christian College</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl">
+                Nurturing minds, building character, and inspiring faith in Mthethwa, KwaZulu-Natal
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <button className="bg-red-700 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-red-800 transition-colors flex items-center justify-center">
+                  Learn More <ChevronRight className="ml-2 w-5 h-5" />
+                </button>
+                <button className="border-2 border-red-700 text-red-700 px-8 py-3 rounded-lg text-lg font-medium hover:bg-red-700 hover:text-white transition-colors">
+                  Schedule a Visit
                 </button>
               </div>
             </div>
-          )}
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section id="home" className="pt-16 bg-gradient-to-br from-red-50 via-white to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 py-20">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Welcome to 
-              <span className="text-red-700"> Kingdom Christian College</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Nurturing minds, building character, and inspiring faith in Mthethwa, KwaZulu-Natal
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-red-700 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-red-800 transition-colors flex items-center justify-center">
-                Learn More <ChevronRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="border-2 border-red-700 text-red-700 px-8 py-3 rounded-lg text-lg font-medium hover:bg-red-700 hover:text-white transition-colors">
-                Schedule a Visit
-              </button>
+            
+            {/* Hero Image */}
+            <div className="lg:order-last">
+              <ImagePlaceholder 
+                height="h-96" 
+                label="School Campus Main Building or Students in Classroom"
+                className="shadow-2xl"
+              />
             </div>
           </div>
           
@@ -176,8 +99,36 @@ const HomePage = () => {
         </div>
       </section>
 
+      {/* Image Gallery Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Life at Kingdom Christian College</h2>
+            <p className="text-lg text-gray-600">Experience our vibrant school community</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            <ImagePlaceholder 
+              height="h-64" 
+              label="Students in Chapel/Assembly"
+              className="hover:shadow-lg transition-shadow duration-300"
+            />
+            <ImagePlaceholder 
+              height="h-64" 
+              label="Sports Activities/Field Day"
+              className="hover:shadow-lg transition-shadow duration-300"
+            />
+            <ImagePlaceholder 
+              height="h-64" 
+              label="Students in Science Lab"
+              className="hover:shadow-lg transition-shadow duration-300"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -190,7 +141,7 @@ const HomePage = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div key={index} className="text-center p-6 rounded-xl bg-gray-50 hover:shadow-lg transition-shadow">
+              <div key={index} className="text-center p-6 rounded-xl bg-white hover:shadow-lg transition-shadow">
                 <div className="text-red-700 mb-4 flex justify-center">{feature.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{feature.title}</h3>
                 <p className="text-gray-600">{feature.description}</p>
@@ -215,11 +166,18 @@ const HomePage = () => {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Boarding House */}
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="flex items-center mb-6">
-                <div className="bg-red-700 p-3 rounded-lg mr-4">
-                  <Home className="w-8 h-8 text-white" />
+              <div className="mb-6">
+                <ImagePlaceholder 
+                  height="h-48" 
+                  label="Boarding House Dormitory/Common Room"
+                  className="mb-6"
+                />
+                <div className="flex items-center">
+                  <div className="bg-red-700 p-3 rounded-lg mr-4">
+                    <Home className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900">Boarding House</h3>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">Boarding House</h3>
               </div>
               <p className="text-gray-700 mb-6">
                 Our boarding facilities provide a safe, nurturing environment where students can focus on their studies while developing independence and lifelong friendships.
@@ -253,11 +211,18 @@ const HomePage = () => {
 
             {/* Transport Services */}
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="flex items-center mb-6">
-                <div className="bg-blue-600 p-3 rounded-lg mr-4">
-                  <Bus className="w-8 h-8 text-white" />
+              <div className="mb-6">
+                <ImagePlaceholder 
+                  height="h-48" 
+                  label="School Bus/Transport Vehicle"
+                  className="mb-6"
+                />
+                <div className="flex items-center">
+                  <div className="bg-blue-600 p-3 rounded-lg mr-4">
+                    <Bus className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900">School Transport</h3>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">School Transport</h3>
               </div>
               <p className="text-gray-700 mb-6">
                 Safe and reliable transport services for day scholars, making quality Christian education accessible to families across the region.
@@ -273,11 +238,7 @@ const HomePage = () => {
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
-                  Multiple routes covering KwaZulu-Natal
-                </li>
-                <li className="flex items-start">
-                  <ChevronRight className="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
-                  GPS tracking for parent peace of mind
+                  Multiple routes covering Mthubathuba
                 </li>
                 <li className="flex items-start">
                   <ChevronRight className="w-5 h-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -302,7 +263,7 @@ const HomePage = () => {
       </section>
 
       {/* Academic Programs */}
-      <section id="academics" className="py-20 bg-gray-50">
+      <section id="academics" className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -313,22 +274,38 @@ const HomePage = () => {
             </p>
           </div>
           
+          {/* Academic Programs with Images */}
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
+            <div className="bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <ImagePlaceholder 
+                height="h-40" 
+                label="Foundation Phase Students Learning"
+                className="mb-6"
+              />
               <h3 className="text-2xl font-bold text-red-700 mb-4">Foundation Phase</h3>
               <p className="text-gray-600 mb-4">Grade R - 3</p>
               <p className="text-gray-700">
                 Building strong foundations in literacy, numeracy, and Christian values through play-based learning and structured activities.
               </p>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-lg">
+            <div className="bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <ImagePlaceholder 
+                height="h-40" 
+                label="Intermediate Phase Classroom"
+                className="mb-6"
+              />
               <h3 className="text-2xl font-bold text-red-700 mb-4">Intermediate Phase</h3>
               <p className="text-gray-600 mb-4">Grade 4 - 6</p>
               <p className="text-gray-700">
                 Developing critical thinking skills while maintaining strong emphasis on character development and biblical principles.
               </p>
             </div>
-            <div className="bg-white rounded-xl p-8 shadow-lg">
+            <div className="bg-gray-50 rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <ImagePlaceholder 
+                height="h-40" 
+                label="Senior Phase/Matric Students"
+                className="mb-6"
+              />
               <h3 className="text-2xl font-bold text-red-700 mb-4">Senior Phase</h3>
               <p className="text-gray-600 mb-4">Grade 7 - 12</p>
               <p className="text-gray-700">
@@ -339,118 +316,47 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-white">
+      {/* Teachers & Staff Section */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Our Families Say
+              Our Dedicated Team
             </h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-50 rounded-xl p-8">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-6 text-lg">"{testimonial.content}"</p>
-                <div>
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-gray-600">{testimonial.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-20 bg-red-700">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Get In Touch
-            </h2>
-            <p className="text-xl text-red-100">
-              Ready to join our school community? We'd love to hear from you.
+            <p className="text-xl text-gray-600">
+              Experienced educators committed to your child's success
             </p>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center text-white">
-              <Phone className="w-8 h-8 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Phone</h3>
-              <p className="text-red-100">+27 (0)XX XXX XXXX</p>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <ImagePlaceholder 
+                height="h-96" 
+                label="Teachers/Staff Group Photo or Principal"
+              />
             </div>
-            <div className="text-center text-white">
-              <Mail className="w-8 h-8 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Email</h3>
-              <p className="text-red-100">info@kingdomchristian.co.za</p>
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-gray-900">Excellence in Education</h3>
+              <p className="text-gray-700 text-lg">
+                Our qualified and passionate teachers bring years of experience and a heart for Christian education. 
+                They are committed to nurturing each student's academic, spiritual, and personal growth.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="text-center p-4 bg-white rounded-lg">
+                  <div className="text-2xl font-bold text-red-700">15+</div>
+                  <div className="text-gray-600">Years Average Experience</div>
+                </div>
+                <div className="text-center p-4 bg-white rounded-lg">
+                  <div className="text-2xl font-bold text-red-700">100%</div>
+                  <div className="text-gray-600">Qualified Teachers</div>
+                </div>
+              </div>
             </div>
-            <div className="text-center text-white">
-              <MapPin className="w-8 h-8 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Location</h3>
-              <p className="text-red-100">Mthethwa, KwaZulu-Natal</p>
-            </div>
-          </div>
-          
-          <div className="text-center mt-12">
-            <button className="bg-white text-red-700 px-8 py-3 rounded-lg text-lg font-medium hover:bg-gray-50 transition-colors">
-              Schedule a School Visit
-            </button>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-8 h-8 bg-red-700 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold">KCC</span>
-                </div>
-                <span className="text-lg font-bold">Kingdom Christian College</span>
-              </div>
-              <p className="text-gray-400">
-                Excellence in Christian education since our founding.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2">
-                <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-                <li><a href="#academics" className="text-gray-400 hover:text-white transition-colors">Academics</a></li>
-                <li><a href="#admissions" className="text-gray-400 hover:text-white transition-colors">Admissions</a></li>
-                <li><a href="#activities" className="text-gray-400 hover:text-white transition-colors">Activities</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Mthethwa, KwaZulu-Natal</li>
-                <li>+27 (0)XX XXX XXXX</li>
-                <li>info@kingdomchristian.co.za</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">School Hours</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Monday - Friday: 7:00 AM - 3:00 PM</li>
-                <li>Office Hours: 7:30 AM - 4:00 PM</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 Kingdom Christian College. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+    
     </div>
   );
 };
