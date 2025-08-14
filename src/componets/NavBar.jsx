@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import {
   Menu, X, BookOpen, Award, Calendar,
   Home, Info, GraduationCap, UserCheck, Activity, Contact
@@ -7,24 +8,39 @@ import {
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  // Determine active section based on current route
+  const getActiveSection = () => {
+    const path = location.pathname;
+    if (path === '/' || path === '/home') return 'home';
+    if (path.startsWith('/about')) return 'about';
+    if (path.startsWith('/academics')) return 'academics';
+    if (path.startsWith('/admissions')) return 'admissions';
+    if (path.startsWith('/activities')) return 'activities';
+    if (path.startsWith('/contact')) return 'contact';
+    return 'home';
+  };
 
   const handleNavigation = (item) => {
-    setActiveSection(item.id);
     if (item.path) {
-      console.log(`Would navigate to: ${item.path}`);
+      navigate(item.path);
     }
     setIsMenuOpen(false);
   };
 
   const navItems = [
     { id: 'home', label: 'Home', path: "/", icon: Home },
-    { id: 'about', label: 'About Us', path: "/About", icon: Info },
-    { id: 'academics', label: 'Academics', path: "/Academics", icon: GraduationCap },
-    { id: 'admissions', label: 'Admissions', path: "/Admissions", icon: UserCheck },
-    { id: 'activities', label: 'Activities', path: "/Activities", icon: Activity },
-    { id: 'contact', label: 'Contact', path: "/Contact", icon: Contact }
+    { id: 'about', label: 'About Us', path: "/about", icon: Info },
+    { id: 'academics', label: 'Academics', path: "/academics", icon: GraduationCap },
+    { id: 'admissions', label: 'Admissions', path: "/admissions", icon: UserCheck },
+    { id: 'activities', label: 'Activities', path: "/activities", icon: Activity },
+    { id: 'contact', label: 'Contact', path: "/contact", icon: Contact }
   ];
+
+  const activeSection = getActiveSection();
 
   return (
     <header
@@ -94,7 +110,7 @@ const Navbar = () => {
 
             {/* CTA Button - More Prominent */}
             <button
-              onClick={() => handleNavigation({ id: 'admissions', path: '/Admissions' })}
+              onClick={() => handleNavigation({ id: 'admissions', path: '/admissions' })}
               className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white px-4 xl:px-6 py-2.5 rounded-lg font-bold hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 text-sm xl:text-base whitespace-nowrap transform hover:scale-105"
             >
               <Calendar className="h-4 w-4 flex-shrink-0" />
@@ -156,7 +172,7 @@ const Navbar = () => {
                 {/* Mobile CTA */}
                 <div className="pt-4 mt-4 border-t border-gray-200">
                   <button
-                    onClick={() => handleNavigation({ id: 'admissions', path: '/Admissions' })}
+                    onClick={() => handleNavigation({ id: 'admissions', path: '/admissions' })}
                     className="w-full bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white py-3 px-4 rounded-xl font-bold hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 transition-all duration-300 shadow-lg flex items-center justify-center gap-2 transform hover:scale-105"
                   >
                     <Calendar className="h-5 w-5" />
