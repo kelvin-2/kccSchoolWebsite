@@ -1,6 +1,8 @@
 import React from 'react';
+import { client, urlFor } from '../../lib/sanityClient';
 import { ChevronRight } from 'lucide-react';
 import ImagePlaceholder from './ImagePlaceholder';
+import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
   return (
