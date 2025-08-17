@@ -5,7 +5,8 @@ import ImagePlaceholder from './ImagePlaceholder';
 import { useEffect, useState } from 'react';
 
 const HeroSection = () => {
-  return (
+  
+return (
     <section id="home" className="pt-32 bg-gradient-to-br from-red-50 via-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4 py-20 grid lg:grid-cols-2 gap-12 items-center">
         
@@ -15,7 +16,7 @@ const HeroSection = () => {
             Welcome to <span className="text-red-700"> Kingdom Christian College</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-600 mb-8">
-            Nurturing minds, building character, and inspiring faith in Mthethwa, KwaZulu-Natal
+            Nurturing minds, building character, and inspiring faith in Mtubatuba, KwaZulu-Natal
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <button className="bg-red-700 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-red-800 transition-colors flex items-center justify-center">
