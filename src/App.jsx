@@ -7,6 +7,7 @@ import HomePage from './pages/HomePage';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import AboutPage from './pages/AboutPage';
 import AcademicPage from './pages/AcademicPage';
+import PreviewPage from './pages/PreviewPage'; 
  
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="about" element={<AboutPage/>} />
           <Route path="academics" element={<AcademicPage/>}/>
         </Route>
+        <Route path="/preview" element={<PreviewPage />} />
       </Routes>
     </Router>
   );

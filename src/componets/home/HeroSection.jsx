@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { client, urlFor } from "../../lib/sanityClient";
 import { ChevronRight } from "lucide-react";
 
-const HeroSection = () => {
+const HeroSection = ({preview}) => {
   const [hero, setHero] = useState(null);
 
   useEffect(() => {
@@ -12,11 +12,14 @@ const HeroSection = () => {
           title,
           subtitle,
           image
-        }`
+        }`,
+        {},
+        preview ? { perspective: "previewDrafts" } : {}
       )
       .then((data) => setHero(data))
       .catch(console.error);
-  }, []);
+  }, [preview]);
+
 
   if (!hero) return <p className="text-center py-20">Loading...</p>;
 
