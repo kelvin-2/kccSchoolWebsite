@@ -39,6 +39,7 @@ const HeroSection = () => {
           <p className="text-xl md:text-2xl text-gray-600 mb-8">
             {hero.subtitle}
           </p>
+
         </div>
 
         {/* Image */}
