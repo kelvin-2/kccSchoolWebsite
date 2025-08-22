@@ -12,7 +12,7 @@ const HomePage = () => {
     <div className="min-h-screen bg-white">
       <HeroSection />
       <StatsSection />
-      <ImageGallery />
+      {/* <ImageGallery /> */}
       <FeaturesSection />
       <BoardingTransportSection />
       <AcademicProgramsSection />
