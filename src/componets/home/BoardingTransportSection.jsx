@@ -1,15 +1,31 @@
-import React from 'react';
-import { ChevronRight, Home, Bus } from 'lucide-react';
-import ImagePlaceholder from './ImagePlaceholder';
+import React, { useEffect, useState } from "react";
+import { ChevronRight, Home, Bus } from "lucide-react";
+import { client, urlFor } from "../../lib/sanityClient"; // make sure you have these
 
 const BoardingTransportSection = () => {
+  const [images, setImages] = useState(null);
+
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "boardingTransport"][0]{
+        boardingImage,
+        transportImage
+      }`)
+      .then((data) => setImages(data))
+      .catch(console.error);
+  }, []);
+
+  if (!images) return null; // loading state
+
   return (
     <section className="py-20 bg-blue-50">
       <div className="max-w-7xl mx-auto px-4">
-        
+
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Boarding & Transport Services</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Boarding & Transport Services
+          </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Flexible accommodation options to suit your family's needs
           </p>
@@ -20,7 +36,15 @@ const BoardingTransportSection = () => {
           
           {/* Boarding */}
           <div className="bg-white rounded-2xl p-8 shadow-lg">
-            <ImagePlaceholder height="h-48" label="Boarding House Dormitory/Common Room" className="mb-6" />
+            {images.boardingImage ? (
+              <img
+                src={urlFor(images.boardingImage).width(800).url()}
+                alt="Boarding House Dormitory/Common Room"
+                className="h-48 w-full object-cover rounded-xl mb-6"
+              />
+            ) : (
+              <div className="h-48 bg-gray-200 rounded-xl mb-6"></div>
+            )}
             <div className="flex items-center mb-6">
               <div className="bg-red-700 p-3 rounded-lg mr-4">
                 <Home className="w-8 h-8 text-white" />
@@ -39,18 +63,24 @@ const BoardingTransportSection = () => {
                 "24/7 security and medical support"
               ].map((item, i) => (
                 <li key={i} className="flex items-start">
-                  <ChevronRight className="w-5 h-5 text-red-700 mr-2 mt-0.5" /> {item}
+                  <ChevronRight className="w-5 h-5 text-red-700 mr-2 mt-0.5" />{" "}
+                  {item}
                 </li>
               ))}
             </ul>
-            <button className="mt-6 bg-red-700 text-white px-6 py-3 rounded-lg hover:bg-red-800 transition-colors">
-              Learn More About Boarding
-            </button>
           </div>
 
           {/* Transport */}
           <div className="bg-white rounded-2xl p-8 shadow-lg">
-            <ImagePlaceholder height="h-48" label="School Bus/Transport Vehicle" className="mb-6" />
+            {images.transportImage ? (
+              <img
+                src={urlFor(images.transportImage).width(800).url()}
+                alt="School Bus/Transport Vehicle"
+                className="h-48 w-full object-cover rounded-xl mb-6"
+              />
+            ) : (
+              <div className="h-48 bg-gray-200 rounded-xl mb-6"></div>
+            )}
             <div className="flex items-center mb-6">
               <div className="bg-blue-600 p-3 rounded-lg mr-4">
                 <Bus className="w-8 h-8 text-white" />
@@ -68,27 +98,14 @@ const BoardingTransportSection = () => {
                 "Competitive rates and flexible payment options"
               ].map((item, i) => (
                 <li key={i} className="flex items-start">
-                  <ChevronRight className="w-5 h-5 text-blue-600 mr-2 mt-0.5" /> {item}
+                  <ChevronRight className="w-5 h-5 text-blue-600 mr-2 mt-0.5" />{" "}
+                  {item}
                 </li>
               ))}
             </ul>
-            <button className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
-              View Transport Routes
-            </button>
           </div>
 
         </div>
-
-        {/* Closing Text */}
-        <div className="text-center mt-12">
-          <p className="text-lg text-gray-700 mb-6">
-            Whether your child boards with us or travels daily, we ensure they receive the same quality care and education.
-          </p>
-          <button className="bg-gray-900 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-gray-800 transition-colors">
-            Contact Us for More Information
-          </button>
-        </div>
-
       </div>
     </section>
   );
