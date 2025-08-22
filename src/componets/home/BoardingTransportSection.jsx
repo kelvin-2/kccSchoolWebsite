@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { ChevronRight, Home, Bus } from "lucide-react";
 import { client, urlFor } from "../../lib/sanityClient"; // make sure you have these
 
-const BoardingTransportSection = () => {
+const BoardingTransportSection = ({preview}) => {
   const [images, setImages] = useState(null);
 
   useEffect(() => {
