@@ -10,7 +10,10 @@ const BoardingTransportSection = () => {
       .fetch(`*[_type == "boardingTransport"][0]{
         boardingImage,
         transportImage
-      }`)
+      }`,
+        {},
+        preview ? { perspective: "previewDrafts" } : {}
+      )
       .then((data) => setImages(data))
       .catch(console.error);
   }, []);
