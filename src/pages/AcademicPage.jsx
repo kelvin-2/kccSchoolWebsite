@@ -23,7 +23,7 @@ export default function AcademicPage() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 py-12">
-        {/* Achievement Highlight */}
+        {/* Achievement Highlight
         <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg p-8 mb-16 text-center">
           <div className="max-w-3xl mx-auto">
             <div className="bg-white bg-opacity-20 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
@@ -49,7 +49,7 @@ export default function AcademicPage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Academic Programs by Phase */}
         <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
@@ -174,7 +174,7 @@ export default function AcademicPage() {
                     <li>Natural Sciences</li>
                     <li>Social Sciences</li>
                     <li>Life Orientation</li>
-                    <li>Economic and Management Sciences</li>
+                    <li> Agricultural Sciences</li>
                     <li>Technology</li>
                     <li>Arts and Culture</li>
                   </ul>
@@ -380,36 +380,6 @@ export default function AcademicPage() {
                   <span>Christian educational materials and devotional resources</span>
                 </li>
               </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Assessment and Reporting */}
-        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Assessment and Reporting</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="text-center">
-              <div className="bg-blue-100 rounded-lg p-6">
-                <FileText className="h-10 w-10 text-blue-600 mx-auto mb-3" />
-                <h3 className="text-lg font-semibold mb-2">Continuous Assessment</h3>
-                <p className="text-gray-600 text-sm">Regular assessments throughout the term including tests, assignments, projects, and practical work.</p>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <div className="bg-green-100 rounded-lg p-6">
-                <Clock className="h-10 w-10 text-green-600 mx-auto mb-3" />
-                <h3 className="text-lg font-semibold mb-2">Formal Examinations</h3>
-                <p className="text-gray-600 text-sm">Mid-year and final examinations conducted according to Department of Education guidelines.</p>
-              </div>
-            </div>
-            
-            <div className="text-center">
-              <div className="bg-purple-100 rounded-lg p-6">
-                <TrendingUp className="h-10 w-10 text-purple-600 mx-auto mb-3" />
-                <h3 className="text-lg font-semibold mb-2">Progress Reports</h3>
-                <p className="text-gray-600 text-sm">Detailed reports issued quarterly with academic performance, attendance, and behavioral assessments.</p>
-              </div>
             </div>
           </div>
         </div>
