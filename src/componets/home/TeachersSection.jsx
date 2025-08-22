@@ -1,21 +1,40 @@
-import React from 'react';
-import ImagePlaceholder from './ImagePlaceholder';
+import React, { useEffect, useState } from 'react';
+import { client, urlFor } from '../lib/sanityClient';
 
 const TeachersSection = () => {
+  const [teachers, setTeachers] = useState([]);
+
+  useEffect(() => {
+    client.fetch(`*[_type == "teacher"]{
+      name,
+      role,
+      image
+    }`,
+        {},
+        preview ? { perspective: "previewDrafts" } : {})
+        .then((data) => setTeachers(data));
+  }, []);
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
-
-        {/* Heading */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Dedicated Team</h2>
           <p className="text-xl text-gray-600">Experienced educators committed to your child's success</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          
-          {/* Image */}
-          <ImagePlaceholder height="h-96" label="Teachers/Staff Group Photo or Principal" />
+          {/* Images from Sanity */}
+          <div className="grid gap-4">
+            {teachers.map((teacher) => (
+              <img
+                key={teacher.name}
+                src={urlFor(teacher.image).width(600).height(400).url()}
+                alt={teacher.name}
+                className="rounded-lg shadow-lg"
+              />
+            ))}
+          </div>
 
           {/* Text */}
           <div className="space-y-6">
