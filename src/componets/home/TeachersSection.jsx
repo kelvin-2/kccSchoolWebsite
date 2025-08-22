@@ -5,7 +5,7 @@ const TeachersSection = ({preview}) => {
   const [teachers, setTeachers] = useState([]);
 
   useEffect(() => {
-    client.fetch(`*[_type == "teacher"]{
+    client.fetch(`*[_type == "teachingStuff"]{
       name,
       role,
       image
@@ -13,7 +13,7 @@ const TeachersSection = ({preview}) => {
         {},
         preview ? { perspective: "previewDrafts" } : {})
         .then((data) => setTeachers(data));
-  }, []);
+  }, [preview]); // Added preview to dependency array
 
   return (
     <section className="py-20 bg-gray-50">
@@ -26,14 +26,20 @@ const TeachersSection = ({preview}) => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Images from Sanity */}
           <div className="grid gap-4">
-            {teachers.map((teacher) => (
-              <img
-                key={teacher.name}
-                src={urlFor(teacher.image).width(600).height(400).url()}
-                alt={teacher.name}
-                className="rounded-lg shadow-lg"
-              />
-            ))}
+            {teachers.length > 0 ? (
+              teachers.map((teacher) => (
+                <img
+                  key={teacher.name}
+                  src={urlFor(teacher.image).width(600).height(400).url()}
+                  alt={teacher.name}
+                  className="rounded-lg shadow-lg"
+                />
+              ))
+            ) : (
+              <div className="h-96 flex items-center justify-center bg-gray-200 rounded-lg shadow-2xl">
+                <span className="text-gray-500">No Image Added</span>
+              </div>
+            )}
           </div>
 
           {/* Text */}
