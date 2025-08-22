@@ -4,6 +4,7 @@ import {
   Menu, X, BookOpen, Award, Calendar,
   Home, Info, GraduationCap, UserCheck, Activity, Contact
 } from 'lucide-react';
+import kccLogo from '../assets/kccLogo.png'; // Fixed import path
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,7 +20,6 @@ const Navbar = () => {
     if (path.startsWith('/about')) return 'about';
     if (path.startsWith('/academics')) return 'academics';
     if (path.startsWith('/admissions')) return 'admissions';
-    // if (path.startsWith('/activities')) return 'activities';
     if (path.startsWith('/contact')) return 'contact';
     return 'home';
   };
@@ -35,8 +35,6 @@ const Navbar = () => {
     { id: 'home', label: 'Home', path: "/", icon: Home },
     { id: 'about', label: 'About Us', path: "/about", icon: Info },
     { id: 'academics', label: 'Academics', path: "/academics", icon: GraduationCap },
-    // { id: 'admissions', label: 'Admissions', path: "/admissions", icon: UserCheck },
-    // { id: 'activities', label: 'Activities', path: "/activities", icon: Activity },
     { id: 'contact', label: 'Contact', path: "/contact", icon: Contact }
   ];
 
@@ -60,11 +58,16 @@ const Navbar = () => {
           >
             {/* Logo Icon */}
             <div className="relative flex-shrink-0">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-18 lg:h-18 bg-gradient-to-br from-red-900 via-red-800 to-red-700 rounded-xl flex items-center justify-center text-white text-sm sm:text-lg lg:text-xl font-bold shadow-2xl group-hover:scale-105 transition-all duration-300 border-3 border-white ring-2 ring-red-100">
-                <span className="font-extrabold tracking-tight">KCC</span>
-              </div>
-              <div className="absolute -bottom-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center shadow-lg ring-2 ring-white">
-                <BookOpen className="h-2 w-2 sm:h-2.5 sm:w-2.5 lg:h-3 lg:w-3 text-white" />
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-18 lg:h-18 rounded-xl flex items-center justify-center text-white shadow-2xl group-hover:scale-105 transition-all duration-300 border-3 border-white ring-2 ring-red-100 overflow-hidden">
+                {kccLogo ? (
+                  <img 
+                    src={kccLogo} 
+                    alt="Kingdom Christian College Logo" 
+                    className="w-full h-full object-contain p-1"
+                  />
+                ) : (
+                  <span className="text-sm sm:text-lg lg:text-xl font-bold">KCC</span>
+                )}
               </div>
             </div>
 
