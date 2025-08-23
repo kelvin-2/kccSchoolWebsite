@@ -50,26 +50,24 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Achievement Highlight */}
-        <div className="bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg p-8 mb-16 text-center">
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-white bg-opacity-20 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
-              <Award className="h-10 w-10 text-white" />
+        {/* Achievement Highlight - Now with white background */}
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+          <div className="text-center">
+            <div className="bg-red-50 rounded-full w-20 h-20 mx-auto mb-6 flex items-center justify-center">
+              <Award className="h-10 w-10 text-red-600" />
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">100% Matric Pass Rate</h2>
-            <p className="text-lg md:text-xl opacity-90">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">100% Matric Pass Rate</h2>
+            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
               We are proud of our outstanding academic achievement. Every student who completed their 
               National Senior Certificate with us has successfully passed, demonstrating our commitment 
               to academic excellence and individual student support.
             </p>
             
-            {/* Image placeholder */}
-            <div className="mt-8 bg-white bg-opacity-10 rounded-lg p-8 border-2 border-dashed border-white border-opacity-30">
-              <div className="text-center text-white opacity-70">
-                <div className="w-16 h-16 bg-white bg-opacity-20 rounded-lg mx-auto mb-4 flex items-center justify-center">
-                  📸
-                </div>
-                <p className="text-sm">Image placeholder: Matric graduation ceremony or celebrating students</p>
+            {/* Image placeholder - ready for actual image */}
+            <div className="bg-gray-100 rounded-lg h-64 md:h-80 flex items-center justify-center border-2 border-dashed border-gray-300">
+              <div className="text-center text-gray-500">
+                <div className="text-4xl mb-2">📸</div>
+                <p className="text-sm">Add image: Matric graduation ceremony or celebrating students</p>
               </div>
             </div>
           </div>
@@ -105,11 +103,11 @@ export default function AboutPage() {
           </div>
         </div>
 
-        {/* Our Story Section - New Content */}
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-8 mb-16">
+        {/* Our Story Section - Now with white background */}
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Our Story</h2>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
             <div>
               <h3 className="text-2xl font-semibold mb-4 text-red-600">Founded on Faith</h3>
               <p className="text-gray-700 mb-4">
@@ -139,14 +137,78 @@ export default function AboutPage() {
             </div>
           </div>
           
-          {/* Story Image placeholder */}
-          <div className="mt-8 bg-blue-50 rounded-lg p-6 border-2 border-dashed border-blue-200">
-            <div className="text-center text-blue-600">
-              <div className="w-16 h-16 bg-blue-100 rounded-lg mx-auto mb-4 flex items-center justify-center text-2xl">
-                🏫
-              </div>
-              <p className="text-sm">Image placeholder: Historical photos or school development over the years</p>
+          {/* Story Image placeholder - ready for actual image */}
+          <div className="bg-gray-100 rounded-lg h-48 flex items-center justify-center border-2 border-dashed border-gray-300">
+            <div className="text-center text-gray-500">
+              <div className="text-3xl mb-2">🏫</div>
+              <p className="text-sm">Add image: Historical photos or school development over the years</p>
             </div>
+          </div>
+        </div>
+
+        {/* Meet Our Principals */}
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Meet Our Principals</h2>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Primary School Principal */}
+            <div className="text-center">
+              <div className="bg-gray-100 rounded-lg h-80 w-64 mx-auto mb-6 flex items-center justify-center border-2 border-dashed border-gray-300">
+                <div className="text-center text-gray-500">
+                  <div className="text-4xl mb-2">👩‍🏫</div>
+                  <p className="text-sm">Add photo: Primary School Principal</p>
+                </div>
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Mrs. [Principal Name]</h3>
+              <p className="text-red-600 font-semibold mb-4">Primary School Principal</p>
+              <p className="text-gray-600 leading-relaxed">
+                With [X] years of experience in Christian education, Mrs. [Name] leads our primary school 
+                with passion and dedication. She believes in nurturing young minds through a blend of 
+                academic excellence and Christian values, ensuring every child feels loved and supported 
+                in their learning journey.
+              </p>
+              
+              <div className="mt-4 text-sm text-gray-500">
+                <p className="mb-1">📧 Email: primary@kingdomchristiancollege.co.za</p>
+                <p>📞 Ext: 101</p>
+              </div>
+            </div>
+
+            {/* High School Principal */}
+            <div className="text-center">
+              <div className="bg-gray-100 rounded-lg h-80 w-64 mx-auto mb-6 flex items-center justify-center border-2 border-dashed border-gray-300">
+                <div className="text-center text-gray-500">
+                  <div className="text-4xl mb-2">👨‍🏫</div>
+                  <p className="text-sm">Add photo: High School Principal</p>
+                </div>
+              </div>
+              
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">Mr. [Principal Name]</h3>
+              <p className="text-red-600 font-semibold mb-4">High School Principal</p>
+              <p className="text-gray-600 leading-relaxed">
+                Mr. [Name] brings [X] years of educational leadership to our high school. His commitment 
+                to academic excellence and character development has been instrumental in achieving our 
+                100% matric pass rate. He is dedicated to preparing students for tertiary education and 
+                life beyond school.
+              </p>
+              
+              <div className="mt-4 text-sm text-gray-500">
+                <p className="mb-1">📧 Email: highschool@kingdomchristiancollege.co.za</p>
+                <p>📞 Ext: 102</p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Optional: Leadership Philosophy */}
+          <div className="mt-12 bg-gray-50 rounded-lg p-6">
+            <h3 className="text-xl font-semibold text-center text-red-600 mb-4">Our Leadership Philosophy</h3>
+            <p className="text-gray-700 text-center leading-relaxed">
+              Our principals work hand-in-hand to ensure a seamless educational experience from 
+              pre-primary through matric. Together, they foster an environment where academic 
+              excellence meets Christian character development, preparing students for success 
+              in all areas of life.
+            </p>
           </div>
         </div>
 
@@ -154,13 +216,11 @@ export default function AboutPage() {
         <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Sports & Activities</h2>
           
-          {/* Sports Image placeholder */}
-          <div className="mb-8 bg-green-50 rounded-lg p-6 border-2 border-dashed border-green-200">
-            <div className="text-center text-green-600">
-              <div className="w-16 h-16 bg-green-100 rounded-lg mx-auto mb-4 flex items-center justify-center text-2xl">
-                ⚽
-              </div>
-              <p className="text-sm">Image placeholder: Students participating in sports activities</p>
+          {/* Sports Image placeholder - ready for actual image */}
+          <div className="mb-8 bg-gray-100 rounded-lg h-48 flex items-center justify-center border-2 border-dashed border-gray-300">
+            <div className="text-center text-gray-500">
+              <div className="text-3xl mb-2">⚽</div>
+              <p className="text-sm">Add image: Students participating in sports activities</p>
             </div>
           </div>
 
@@ -255,50 +315,6 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-
-        {/* Location & Contact */}
-        {/* <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-lg p-8">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Visit Our Campus</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <div className="flex items-start mb-4">
-                <MapPin className="h-6 w-6 text-red-600 mr-3 mt-1" />
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">Location</h3>
-                  <p className="text-gray-600">
-                    Mthethwa, KwaZulu-Natal<br />
-                    South Africa
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start mb-4">
-                <Calendar className="h-6 w-6 text-red-600 mr-3 mt-1" />
-                <div>
-                  <h3 className="text-lg font-semibold mb-2">School Hours</h3>
-                  <p className="text-gray-600">
-                    Monday - Friday: 7:30 AM - 2:30 PM<br />
-                    Saturday: Sports & Activities (Optional)
-                  </p>
-                </div>
-              </div>
-            </div>
-            
-            <div>
-              <div className="bg-white rounded-lg p-6">
-                <h3 className="text-lg font-semibold mb-4 text-center">Schedule a Campus Visit</h3>
-                <p className="text-gray-600 text-center mb-4">
-                  Experience our Christian learning environment firsthand. We'd love to show you around our campus and answer any questions about our programs.
-                </p>
-                <div className="text-center">
-                  <button className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors font-semibold">
-                    Book a Visit
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </div>
     </div>
   );
