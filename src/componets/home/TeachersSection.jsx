@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { client, urlFor } from '../lib/sanityClient';
+import { client, urlFor } from "../../lib/sanityClient";
 
-const TeachersSection = () => {
+const TeachersSection = ({preview}) => {
   const [teachers, setTeachers] = useState([]);
 
   useEffect(() => {
@@ -11,7 +11,7 @@ const TeachersSection = () => {
       image
     }`,
         {},
-        preview ? { perspective: "previewDrafts" } : {})
+        preview ? { perspective: "drafts" } : {})
         .then((data) => setTeachers(data));
   }, []);
 
