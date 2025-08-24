@@ -18,7 +18,7 @@ export default function AboutPage() {
         <MissionVision />
         <AchievementHighlight />
         <CoreValues />
-        <OurStory />
+        {/* <OurStory /> */}
         <Principals />
         {/* <SportsActivities /> */}
         <Accreditation />
