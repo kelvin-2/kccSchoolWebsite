@@ -20,7 +20,7 @@ export default function AboutPage() {
         <CoreValues />
         <OurStory />
         <Principals />
-        <SportsActivities />
+        {/* <SportsActivities /> */}
         <Accreditation />
         <Facilities />
       </div>
