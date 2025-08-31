@@ -15,7 +15,7 @@ const HomePage = () => {
       {/* <ImageGallery /> */}
       <FeaturesSection />
       <BoardingTransportSection />
-      <AcademicProgramsSection />
+      {/* <AcademicProgramsSection /> */}
       <TeachersSection />
     </div>
   );

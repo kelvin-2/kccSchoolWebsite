@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import AboutPage from './pages/AboutPage';
 import AcademicPage from './pages/AcademicPage';
 import PreviewPage from './pages/PreviewPage'; 
+import ContactUs from './pages/ContactUs'
  
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="home" element={<HomePage />} />
           <Route path="about" element={<AboutPage/>} />
           <Route path="academics" element={<AcademicPage/>}/>
+          <Route path="contact" element={<ContactUs/>} />
         </Route>
         <Route path="/preview" element={<PreviewPage />} />
       </Routes>
