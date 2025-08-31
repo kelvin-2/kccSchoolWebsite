@@ -23,7 +23,7 @@ export default function Principals() {
           },
           {
             title: data.highSchoolPrincipal.name,
-            role: "High School Principal",
+            role: "Combined School Principal",
             placeholder: data.highSchoolPrincipal.emojiPlaceholder,
             desc: data.highSchoolPrincipal.description,
             photo: data.highSchoolPrincipal.photo,

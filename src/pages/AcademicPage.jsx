@@ -116,7 +116,7 @@ export default function AcademicPage() {
               <div className="border-l-4 border-red-500 pl-6 bg-red-50 p-6 rounded-r-lg">
                 <div className="flex items-center mb-4">
                   <Users className="h-8 w-8 text-red-600 mr-3" />
-                  <h3 className="text-2xl font-semibold text-red-600">Pre-Primary (RRR)</h3>
+                  <h3 className="text-2xl font-semibold text-red-600">Pre-Primary (RRR-RR)</h3>
                   <span className="ml-auto bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">Ages 4-5</span>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -376,7 +376,7 @@ export default function AcademicPage() {
           </div>
 
           {/* Learning Resources & Facilities */}
-          <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
+          {/* <div className="bg-white rounded-lg shadow-lg p-8 mb-16">
             <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Learning Resources & Facilities</h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
@@ -385,10 +385,6 @@ export default function AcademicPage() {
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
                     <span>Modern, well-equipped classrooms with digital boards</span>
-                  </li>
-                  <li className="flex items-center">
-                    <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
-                    <span>Fully equipped science laboratories for Physics, Chemistry, and Biology</span>
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
@@ -438,7 +434,7 @@ export default function AcademicPage() {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
