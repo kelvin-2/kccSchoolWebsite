@@ -269,11 +269,8 @@ export default function AcademicPage() {
                     <ul className="list-disc list-inside text-gray-600 space-y-1">
                       <li>Physical Sciences</li>
                       <li>Life Sciences</li>
-                      <li>Accounting</li>
                       <li>Business Studies</li>
-                      <li>Economics</li>
                       <li>Geography</li>
-                      <li>History</li>
                       <li>Tourism</li>
                     </ul>
                   </div>
@@ -282,7 +279,6 @@ export default function AcademicPage() {
                     <ul className="list-disc list-inside text-gray-600 space-y-1">
                       <li>NSC qualification preparation</li>
                       <li>University application guidance</li>
-                      <li>Bursary and scholarship assistance</li>
                       <li>Career counseling sessions</li>
                       <li>Study method workshops</li>
                       <li>Exam preparation strategies</li>

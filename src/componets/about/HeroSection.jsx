@@ -92,14 +92,6 @@ export default function HeroSection() {
             ))}
           </div>
         </div>
-
-        {/* Call to Action - Optional */}
-        <div className={`transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'} mt-8`}>
-          <button className="group relative px-8 py-3 bg-white bg-opacity-15 text-white font-semibold rounded-full border border-white border-opacity-30 hover:bg-opacity-25 hover:scale-105 transition-all duration-300 backdrop-blur-sm">
-            <span className="relative z-10">Learn More About Us</span>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-          </button>
-        </div>
       </div>
 
       {/* Bottom gradient overlay for smoother transition */}

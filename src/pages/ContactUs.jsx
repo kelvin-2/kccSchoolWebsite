@@ -78,7 +78,7 @@ export default function ContactUsPage() {
       icon: Mail,
       title: "Email Addresses",
       details: [
-        "kccenrol@gmail.com"
+        "kccschool@telkomsa.net"
       ],
       color: "from-purple-500 to-pink-500",
       bgColor: "bg-purple-50",
@@ -153,7 +153,7 @@ export default function ContactUsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 ">
       {/* Enhanced Hero Section */}
       <div className="relative bg-gradient-to-r from-red-700 via-red-600 to-red-500 text-white py-20 overflow-hidden">
         <div className="absolute inset-0">
