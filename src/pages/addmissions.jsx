@@ -3,48 +3,46 @@ import { ChevronRight, Calendar, FileText, Users, Award, Phone, Mail, MapPin, Ch
 
 const AdmissionsSection = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [selectedGrade, setSelectedGrade] = useState('');
 
   const admissionSteps = [
     {
-      title: "Submit Application",
-      description: "Complete our comprehensive online application form with all required documents.",
+      title: "Download Application Form",
+      description: "Download the official application form and prepare all required documents.",
       icon: FileText,
-      details: ["Application form", "Birth certificate", "Previous school reports", "Passport photos"]
+      details: ["Download application form", "Print and complete form", "Gather required documents", "Prepare passport photos"]
     },
     {
-      title: "Assessment & Interview",
-      description: "Schedule an assessment and meet with our admissions team.",
+      title: "Submit at School",
+      description: "Bring completed application and documents to our school office for submission.",
       icon: Users,
-      details: ["Academic assessment", "Parent interview", "Student interview", "Campus tour"]
+      details: ["Visit school office", "Submit completed forms", "Schedule assessment date", "Receive confirmation"]
     },
     {
-      title: "Review & Decision",
-      description: "Our team reviews your application and provides admission decision.",
+      title: "Assessment & Decision",
+      description: "Complete assessment and interview process, then receive admission decision.",
       icon: Award,
-      details: ["Application review", "Academic evaluation", "Admission decision", "Welcome package"]
+      details: ["Student assessment", "Parent interview", "Application review", "Admission decision"]
     }
   ];
 
-  const gradeOptions = [
-    { value: "pre-primary", label: "Pre-Primary (RRR-RR)", ages: "Ages 4-5" },
-    { value: "primary", label: "Primary Phase (R-3)", ages: "Ages 5-9" },
-    { value: "intermediate", label: "Intermediate Phase (4-6)", ages: "Ages 10-12" },
-    { value: "senior", label: "Senior Phase (7-9)", ages: "Ages 13-15" },
-    { value: "fet", label: "FET Phase (10-12)", ages: "Ages 16-18" }
+  const gradeInfo = [
+    "Pre-Primary (RRR-RR) - Ages 4-5",
+    "Primary Phase (R-3) - Ages 5-9", 
+    "Intermediate Phase (4-6) - Ages 10-12",
+    "Senior Phase (7-9) - Ages 13-15",
+    "FET Phase (10-12) - Ages 16-18"
   ];
 
   const requirements = [
     "Completed application form",
     "Birth certificate (certified copy)",
-    "Previous academic records",
-    "Immunization records",
+    "Previous academic records",                          
     "Two passport-sized photographs",
     "Transfer letter (if applicable)"
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 mt-10 pt-20">
       {/* Header Section */}
       <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 text-white py-16">
         <div className="max-w-6xl mx-auto px-6">
@@ -74,42 +72,21 @@ const AdmissionsSection = () => {
       </div>
 
       <div className="max-w-6xl mx-auto px-6 py-16">
-        {/* Quick Application Form */}
+        {/* Application Form Download */}
         <div className="bg-white rounded-3xl shadow-2xl p-8 mb-16 border border-gray-100">
           <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Start Your Application</h2>
-            <p className="text-gray-600">Select your child's grade level to begin the admission process</p>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Download Application Form</h2>
+            <p className="text-gray-600">One application form for all grades - from Pre-Primary to Grade 12</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-3">
-                Select Grade Level
-              </label>
+              <h3 className="text-lg font-semibold text-gray-800 mb-4">Available Grades</h3>
               <div className="space-y-3">
-                {gradeOptions.map((option) => (
-                  <div
-                    key={option.value}
-                    className={`p-4 rounded-xl border-2 cursor-pointer transition-all duration-300 ${
-                      selectedGrade === option.value
-                        ? 'border-blue-500 bg-blue-50 shadow-md'
-                        : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50'
-                    }`}
-                    onClick={() => setSelectedGrade(option.value)}
-                  >
-                    <div className="flex justify-between items-center">
-                      <div>
-                        <div className="font-semibold text-gray-800">{option.label}</div>
-                        <div className="text-sm text-gray-600">{option.ages}</div>
-                      </div>
-                      <div className={`w-4 h-4 rounded-full border-2 ${
-                        selectedGrade === option.value ? 'bg-blue-500 border-blue-500' : 'border-gray-300'
-                      }`}>
-                        {selectedGrade === option.value && (
-                          <div className="w-full h-full bg-white rounded-full scale-50"></div>
-                        )}
-                      </div>
-                    </div>
+                {gradeInfo.map((grade, index) => (
+                  <div key={index} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                    <CheckCircle className="w-5 h-5 text-blue-500 flex-shrink-0" />
+                    <span className="text-gray-700">{grade}</span>
                   </div>
                 ))}
               </div>
@@ -126,17 +103,21 @@ const AdmissionsSection = () => {
                 ))}
               </div>
 
-              <button 
-                className={`w-full mt-6 py-4 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                  selectedGrade 
-                    ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
-                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                }`}
-                disabled={!selectedGrade}
+              <div className="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-200">
+                <h4 className="font-semibold text-blue-800 mb-2">Submission Instructions</h4>
+                <p className="text-sm text-blue-700">
+                  After downloading and completing the form, bring all documents to our school office during office hours: Mon-Fri, 7:30 AM - 3:30 PM
+                </p>
+              </div>
+
+              <a 
+                href="/application-form.pdf" 
+                download="KCC-Application-Form.pdf"
+                className="w-full mt-6 py-4 px-6 rounded-xl font-semibold transition-all duration-300 bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl inline-block text-center no-underline"
               >
-                Continue Application
+                Download Application Form
                 <ChevronRight className="inline-block w-5 h-5 ml-2" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -146,7 +127,7 @@ const AdmissionsSection = () => {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">Admission Process</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our streamlined three-step admission process ensures a smooth transition for your child
+              Our simple three-step admission process: download, submit at school, and complete assessment
             </p>
           </div>
 
@@ -204,7 +185,7 @@ const AdmissionsSection = () => {
                 <Phone className="w-8 h-8" />
               </div>
               <h3 className="font-semibold mb-2">Call Us</h3>
-              <p className="text-blue-100">+27 11 123 4567</p>
+              <p className="text-blue-100">035 550 3144</p>
             </div>
 
             <div className="text-center">
@@ -212,7 +193,7 @@ const AdmissionsSection = () => {
                 <Mail className="w-8 h-8" />
               </div>
               <h3 className="font-semibold mb-2">Email Us</h3>
-              <p className="text-blue-100">admissions@kcc.co.za</p>
+              <p className="text-blue-100">kccschool@telkomsa.net</p>
             </div>
 
             <div className="text-center">
