@@ -201,14 +201,8 @@ const AdmissionsSection = () => {
                 <MapPin className="w-8 h-8" />
               </div>
               <h3 className="font-semibold mb-2">Visit Us</h3>
-              <p className="text-blue-100">Schedule a campus tour</p>
+              
             </div>
-          </div>
-
-          <div className="text-center mt-8">
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-xl font-semibold hover:bg-blue-50 transition-all duration-300 shadow-lg">
-              Schedule Campus Visit
-            </button>
           </div>
         </div>
       </div>
