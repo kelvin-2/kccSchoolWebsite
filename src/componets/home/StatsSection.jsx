@@ -1,7 +1,7 @@
 import React from 'react';
 
 const stats = [
-  { value: "Grade R-12", label: "Complete Education" },
+  { value: "Grade RRR-12", label: "Complete Education" },
   { value: "Boarding &\nDay Options", label: "Flexible Learning" },
   { value: "Experienced", label: "Teachers" },
   { value: "Christ-Centered", label: "Education" }

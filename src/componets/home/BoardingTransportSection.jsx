@@ -124,7 +124,7 @@ const BoardingTransportSection = () => {
               {[
                 "Modern, well-maintained school buses",
                 "Experienced, licensed drivers",
-                "Multiple routes covering Mthubathuba", 
+                "Multiple routes covering Mtubatuba", 
                 "Competitive rates and flexible payment options"
               ].map((item, i) => (
                 <li key={i} className="flex items-start group">

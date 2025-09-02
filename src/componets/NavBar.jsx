@@ -112,13 +112,13 @@ const Navbar = () => {
             </nav>
 
             {/* CTA Button - More Prominent */}
-            {/* <button
+            <button
               onClick={() => handleNavigation({ id: 'admissions', path: '/admissions' })}
               className="bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white px-4 xl:px-6 py-2.5 rounded-lg font-bold hover:from-blue-700 hover:via-blue-800 hover:to-blue-900 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center gap-2 text-sm xl:text-base whitespace-nowrap transform hover:scale-105"
             >
               <Calendar className="h-4 w-4 flex-shrink-0" />
               Apply Now
-            </button> */}
+            </button>
           </div>
 
           {/* Mobile menu button - Better Design */}

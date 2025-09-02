@@ -22,7 +22,7 @@ export default function AboutPage() {
         <Principals />
         {/* <SportsActivities /> */}
         <Accreditation />
-        <Facilities />
+        {/* <Facilities /> */}
       </div>
     </div>
   );
