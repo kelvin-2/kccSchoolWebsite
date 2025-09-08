@@ -35,7 +35,7 @@ export default function AchievementHighlight({ preview }) {
       <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
         {highlight.description}
       </p>
-      <div className="bg-gray-100 rounded-lg h-64 md:h-80 flex items-center justify-center border-2 border-dashed border-gray-300 overflow-hidden">
+      {/* <div className="bg-gray-100 rounded-lg h-64 md:h-80 flex items-center justify-center border-2 border-dashed border-gray-300 overflow-hidden">
         {highlight.image ? (
           <img
             src={urlFor(highlight.image).url()}
@@ -48,7 +48,7 @@ export default function AchievementHighlight({ preview }) {
             <p className="text-sm">Add image: Matric graduation ceremony or celebrating students</p>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }

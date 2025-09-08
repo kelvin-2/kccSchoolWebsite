@@ -279,7 +279,7 @@ export default function AcademicPage() {
                     <ul className="list-disc list-inside text-gray-600 space-y-1">
                       <li>NSC qualification preparation</li>
                       <li>University application guidance</li>
-                      <li>Career counseling sessions</li>
+                      {/* <li>Career counseling sessions</li> */}
                       <li>Study method workshops</li>
                       <li>Exam preparation strategies</li>
                     </ul>
