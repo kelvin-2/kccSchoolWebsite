@@ -36,7 +36,7 @@ const Navbar = () => {
     { id: 'home', label: 'Home', path: "/", icon: Home },
     { id: 'about', label: 'About Us', path: "/about", icon: Info },
     { id: 'academics', label: 'Academics', path: "/academics", icon: GraduationCap },
-    { id: 'gallery', label: 'Gallery', path: "/gallery", icon: Images },
+    //{ id: 'gallery', label: 'Gallery', path: "/gallery", icon: Images },
     { id: 'contact', label: 'Contact', path: "/contact", icon: Contact }
   ];
 
