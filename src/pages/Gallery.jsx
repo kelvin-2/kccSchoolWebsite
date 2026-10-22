@@ -18,8 +18,7 @@ const CATEGORIES = [
   { value: 'events', label: 'Events' },
   { value: 'sports', label: 'Sports' },
   { value: 'academics', label: 'Academics' },
-  { value: 'campus', label: 'Campus' },
-  { value: 'other', label: 'Other' },
+  
 ]
 
 const QUERY = `*[_type == "galleryImage" && defined(image.asset)] | order(date desc, _createdAt desc) {
