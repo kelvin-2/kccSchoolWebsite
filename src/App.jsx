@@ -10,7 +10,7 @@ import AcademicPage from './pages/AcademicPage';
 import PreviewPage from './pages/PreviewPage'; 
 import ContactUs from './pages/ContactUs'
 import Admission from './pages/addmissions'
-
+import Gallery from './pages/Gallery'
  
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
           <Route path="academics" element={<AcademicPage/>}/>
           <Route path="contact" element={<ContactUs/>} />
           <Route path="admissions" element={<Admission/>}/>
+          <Route path="gallery" element={<Gallery />} />
         </Route>
         <Route path="/preview" element={<PreviewPage />} />
       </Routes>

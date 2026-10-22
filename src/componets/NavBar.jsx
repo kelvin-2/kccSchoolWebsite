@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import {
   Menu, X, BookOpen, Award, Calendar,
-  Home, Info, GraduationCap, UserCheck, Activity, Contact
+  Home, Info, GraduationCap, UserCheck, Activity, Contact, Images
 } from 'lucide-react';
 import kccLogo from '../assets/kccLogo.png'; // Fixed import path
 
@@ -20,6 +20,7 @@ const Navbar = () => {
     if (path.startsWith('/about')) return 'about';
     if (path.startsWith('/academics')) return 'academics';
     if (path.startsWith('/admissions')) return 'admissions';
+    if (path.startsWith('/gallery')) return 'gallery';
     if (path.startsWith('/contact')) return 'contact';
     return 'home';
   };
@@ -35,6 +36,7 @@ const Navbar = () => {
     { id: 'home', label: 'Home', path: "/", icon: Home },
     { id: 'about', label: 'About Us', path: "/about", icon: Info },
     { id: 'academics', label: 'Academics', path: "/academics", icon: GraduationCap },
+    { id: 'gallery', label: 'Gallery', path: "/gallery", icon: Images },
     { id: 'contact', label: 'Contact', path: "/contact", icon: Contact }
   ];
 
